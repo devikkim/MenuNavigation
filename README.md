@@ -1,10 +1,6 @@
 # MenuNavigation
 This repository is simplest menu navigation.
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
 * demo.gif
 
 <img alt="Demo" src="/resources/demo.gif?raw=true" width="290">&nbsp;
