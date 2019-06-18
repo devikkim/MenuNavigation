@@ -1,7 +1,11 @@
 # MenuNavigation
 This repository is simplest menu navigation. 
 
+(가장 간단히 사용할 수 있는 메뉴 네비게이션 컨트롤러 입니다.)
+
 Just add ```Menu``` model at UINavigationController using ```setMenu```
+
+(단지 ```Menu``` 모델을 UINavigationController의 ```setMenu```를 사용하여 추가하세요.)
 
 ```swift
 // Menu Model
@@ -86,6 +90,8 @@ extension UINavigationController {
 
 * you can edit using ```MenuConfiguration```
 
+(```MenuConfiguration``` 을 사용하여 편집 할 수 있습니다.)
+
 ```swift
 struct MenuConfiguration {
   
@@ -130,6 +136,11 @@ struct MenuConfiguration {
 }
 
 ```
+## Comment
+This repository's purpose is just study. So there is no license. Please use as you like.
+
+(이 리포지토리는 공부를 목적으로 생성하였습니다. 따로 저작권은 없습니다. 마음껏 사용하세요.)
+
 ## Author
 
 devikkim@gmail.com
