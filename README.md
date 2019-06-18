@@ -67,7 +67,52 @@ This repository is simplest menu navigation.
   }
 ```
 
+* you can edit using ```MenuConfiguration```
 
+```swift
+struct MenuConfiguration {
+  
+  /// NavigationBar's Title
+  var title: String?
+  
+  /// NavigationBar's Title Font
+  var titleFont = UIFont(name: "HelveticaNeue-Medium", size: 17)
+  
+  /// NavigationBar's Title Color
+  var titleTextColor = UIColor.black
+  
+  /// NavigationBar's Tint Color
+  var navigationTintColor = UIColor.black
+  
+  /// NavigationBar's Bar Tint Color
+  var navigationBarTintColor = UIColor.white
+  
+  /// NavigationBar's isTranslucent
+  var navigationIsTranslucent = true
+  
+  ///  MenuView's Background Color
+  var menuViewBackgroundColor = UIColor.white
+  
+  /// MenuView's Cell Background Color
+  var menuViewCellBackgroundColor = UIColor.white
+  
+  /// MenuView's Cell Text Font
+  var menuViewCellFont = UIFont(name: "HelveticaNeue-Medium", size: 15)
+  
+  /// MenuView's Cell Text Color
+  var menuViewCellTextColor = UIColor.black
+  
+  /// MenuView's Cell Height
+  var menuViewCellHeight: CGFloat = 50
+  
+  ///  NavigationBar right image
+  var rightImage = UIImage(named: "down")
+  
+  ///  Use Selected Menu's Title as NavigationBar's Title
+  var isUseSelectedMenuTitle = false
+}
+
+```
 ## Author
 
 devikkim@gmail.com
