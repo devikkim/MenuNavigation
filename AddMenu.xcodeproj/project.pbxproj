@@ -14,6 +14,11 @@
 		319B010222B4CCD700546447 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 319B010022B4CCD700546447 /* LaunchScreen.storyboard */; };
 		319B010D22B4CCD700546447 /* AddMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319B010C22B4CCD700546447 /* AddMenuTests.swift */; };
 		319B011822B4CCD700546447 /* AddMenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319B011722B4CCD700546447 /* AddMenuUITests.swift */; };
+		319B014422B4CD1A00546447 /* MenuTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319B014022B4CD1A00546447 /* MenuTitleView.swift */; };
+		319B014522B4CD1A00546447 /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319B014122B4CD1A00546447 /* UINavigationController+Ext.swift */; };
+		319B014622B4CD1A00546447 /* MenuContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319B014222B4CD1A00546447 /* MenuContainerView.swift */; };
+		734DFA6622B8BD9E0048C7F9 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734DFA6522B8BD9E0048C7F9 /* ModalViewController.swift */; };
+		734DFA6822B8BF8D0048C7F9 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734DFA6722B8BF8D0048C7F9 /* Menu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		319B011322B4CCD700546447 /* AddMenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AddMenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		319B011722B4CCD700546447 /* AddMenuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMenuUITests.swift; sourceTree = "<group>"; };
 		319B011922B4CCD700546447 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		319B014022B4CD1A00546447 /* MenuTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTitleView.swift; sourceTree = "<group>"; };
+		319B014122B4CD1A00546447 /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
+		319B014222B4CD1A00546447 /* MenuContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuContainerView.swift; sourceTree = "<group>"; };
+		734DFA6522B8BD9E0048C7F9 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		734DFA6722B8BF8D0048C7F9 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +109,12 @@
 			children = (
 				319B00F722B4CCD600546447 /* AppDelegate.swift */,
 				319B00F922B4CCD600546447 /* ViewController.swift */,
+				734DFA6522B8BD9E0048C7F9 /* ModalViewController.swift */,
 				319B00FB22B4CCD600546447 /* Main.storyboard */,
 				319B00FE22B4CCD700546447 /* Assets.xcassets */,
 				319B010022B4CCD700546447 /* LaunchScreen.storyboard */,
 				319B010322B4CCD700546447 /* Info.plist */,
+				319B013F22B4CD1A00546447 /* MenuNavigationController */,
 			);
 			path = AddMenu;
 			sourceTree = "<group>";
@@ -123,6 +135,17 @@
 				319B011922B4CCD700546447 /* Info.plist */,
 			);
 			path = AddMenuUITests;
+			sourceTree = "<group>";
+		};
+		319B013F22B4CD1A00546447 /* MenuNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				319B014122B4CD1A00546447 /* UINavigationController+Ext.swift */,
+				319B014022B4CD1A00546447 /* MenuTitleView.swift */,
+				319B014222B4CD1A00546447 /* MenuContainerView.swift */,
+				734DFA6722B8BF8D0048C7F9 /* Menu.swift */,
+			);
+			path = MenuNavigationController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +280,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				319B00FA22B4CCD600546447 /* ViewController.swift in Sources */,
+				319B014422B4CD1A00546447 /* MenuTitleView.swift in Sources */,
+				734DFA6822B8BF8D0048C7F9 /* Menu.swift in Sources */,
+				319B014622B4CD1A00546447 /* MenuContainerView.swift in Sources */,
+				319B014522B4CD1A00546447 /* UINavigationController+Ext.swift in Sources */,
 				319B00F822B4CCD600546447 /* AppDelegate.swift in Sources */,
+				734DFA6622B8BD9E0048C7F9 /* ModalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +461,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZF8NN25XW6;
 				INFOPLIST_FILE = AddMenu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,6 +479,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZF8NN25XW6;
 				INFOPLIST_FILE = AddMenu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
