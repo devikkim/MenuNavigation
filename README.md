@@ -1,5 +1,22 @@
 # MenuNavigation
-This repository is simplest menu navigation.
+This repository is simplest menu navigation. 
+
+Just add ```Menu``` model at UINavigationController using ```setMenu```
+
+```swift
+// Menu Model
+struct Menu {
+  let titleName: String
+  let didSelect: () -> ()
+}
+
+
+// Extension of UINavigationController
+extension UINavigationController {
+  func setMenu(menu: [Menu], configuration: MenuConfiguration? = nil)
+}
+
+```
 
 * demo.gif
 
