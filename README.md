@@ -9,6 +9,10 @@ This repository is simplest menu navigation.
 
 (가장 간단히 사용할 수 있는 메뉴 네비게이션 컨트롤러 입니다.)
 
+## Example
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
 Just add ```Menu``` model at UINavigationController using ```setMenu```
 
 (단지 ```Menu``` 모델을 UINavigationController의 ```setMenu```를 사용하여 추가하세요.)
@@ -33,11 +37,9 @@ extension UINavigationController {
 <img alt="Demo" src="/resources/demo.gif?raw=true" width="290">&nbsp;
 
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
 ## Requirements
+
+MenuNavigation requires iOS 10+ and is compatible with Swift 4.2 projects.
 
 ## Installation
 
