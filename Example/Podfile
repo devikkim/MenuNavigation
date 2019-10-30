@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MenuNavigation_Example' do
+  pod 'MenuNavigation', :path => '../'
+
+  target 'MenuNavigation_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase' , '~> 2.1.4'
+  end
+end

@@ -1,0 +1,6 @@
+framework module MenuNavigation {
+  umbrella header "MenuNavigation-umbrella.h"
+
+  export *
+  module * { export * }
+}
