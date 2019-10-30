@@ -36,20 +36,6 @@ extension UINavigationController {
 
 <img alt="Demo" src="/resources/demo.gif?raw=true" width="290">&nbsp;
 
-
-## Requirements
-
-MenuNavigation requires iOS 10+ and is compatible with Swift 4.2 projects.
-
-## Installation
-
-MenuNavigation is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod 'MenuNavigation'
-```
-
 * sample code
 
 ```swift
@@ -156,6 +142,19 @@ struct MenuConfiguration {
   var isUseSelectedMenuTitle = false
 }
 
+```
+
+## Requirements
+
+MenuNavigation requires iOS 10+ and is compatible with Swift 4.2 projects.
+
+## Installation
+
+MenuNavigation is available through [CocoaPods](https://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'MenuNavigation'
 ```
 
 ## Author
