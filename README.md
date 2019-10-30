@@ -17,7 +17,7 @@ Just add ```Menu``` model at UINavigationController using ```setMenu```
 // Menu Model
 struct Menu {
   let titleName: String
-  let didSelect: () -> ()
+  let didSelect: (() -> Void)?
 }
 
 
