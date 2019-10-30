@@ -1,4 +1,10 @@
 # MenuNavigation
+[![CI Status](https://img.shields.io/travis/devikkim@gmail.com/MenuNavigation.svg?style=flat)](https://travis-ci.org/devikkim@gmail.com/MenuNavigation)
+[![Version](https://img.shields.io/cocoapods/v/MenuNavigation.svg?style=flat)](https://cocoapods.org/pods/MenuNavigation)
+[![License](https://img.shields.io/cocoapods/l/MenuNavigation.svg?style=flat)](https://cocoapods.org/pods/MenuNavigation)
+[![Platform](https://img.shields.io/cocoapods/p/MenuNavigation.svg?style=flat)](https://cocoapods.org/pods/MenuNavigation)
+
+
 This repository is simplest menu navigation. 
 
 (가장 간단히 사용할 수 있는 메뉴 네비게이션 컨트롤러 입니다.)
@@ -25,6 +31,22 @@ extension UINavigationController {
 * demo.gif
 
 <img alt="Demo" src="/resources/demo.gif?raw=true" width="290">&nbsp;
+
+
+## Example
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+## Requirements
+
+## Installation
+
+MenuNavigation is available through [CocoaPods](https://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'MenuNavigation'
+```
 
 * sample code
 
@@ -141,6 +163,12 @@ This repository's purpose is just study. So there is no license. Please use as y
 
 (이 리포지토리는 공부를 목적으로 생성하였습니다. 따로 저작권은 없습니다. 마음껏 사용하세요.)
 
+
 ## Author
 
 devikkim@gmail.com
+
+## License
+
+MenuNavigation is available under the MIT license. See the LICENSE file for more info.
+
