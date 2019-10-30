@@ -31,6 +31,7 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '10.0'
 
   s.source_files = 'MenuNavigation/Classes/**/*'
+  s.swift_versions = '4.2'
   
    s.resource_bundles = {
      'MenuNavigation' => ['MenuNavigation/Assets/*.png']
