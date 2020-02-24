@@ -101,8 +101,12 @@ class MenuTitleView: UIStackView {
   
   /// NavigationBar's Title Image ( Right)
   private lazy var titleImage: UIImage? = {
-    let bundle = Bundle(for: MenuTitleView.self)
-    let image = UIImage(named: "down", in: bundle, compatibleWith: nil)
+    let frameworkBundle = Bundle(for: MenuTitleView.self)
+    guard let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("MenuNavigation.bundle") else {
+        return nil
+    }
+    let resourceBundle = Bundle(url: bundleURL)
+    let image = UIImage(named: "down", in: resourceBundle, compatibleWith: nil)
     return image
   }()
   
