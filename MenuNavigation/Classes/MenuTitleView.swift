@@ -60,21 +60,23 @@ class MenuTitleView: UIStackView {
         return
       }
       
-      titleLabel.text = configuration.title
-      titleLabel.textColor = configuration.titleTextColor
-      titleLabel.font = configuration.titleFont
-      
-      childViewController?.navigationController?.navigationBar.barTintColor = configuration.navigationBarTintColor
-      childViewController?.navigationController?.navigationBar.tintColor = configuration.navigationTintColor
-      childViewController?.navigationController?.navigationBar.isTranslucent = configuration.navigationIsTranslucent
-      
-      menuContainerView.isTranslucent = configuration.navigationIsTranslucent
-      menuContainerView.tableView.backgroundColor = configuration.menuViewBackgroundColor
-      
-      menuContainerView.cellBackgroundColor = configuration.menuViewCellBackgroundColor
-      menuContainerView.cellFont = configuration.menuViewCellFont
-      menuContainerView.cellTextColor = configuration.menuViewCellTextColor
-      menuContainerView.cellHeight = configuration.menuViewCellHeight
+        titleLabel.text = configuration.title
+        titleLabel.textColor = configuration.titleTextColor
+        titleLabel.font = configuration.titleFont
+        
+        childViewController?.navigationController?.navigationBar.barTintColor = configuration.navigationBarTintColor
+        childViewController?.navigationController?.navigationBar.tintColor = configuration.navigationTintColor
+        childViewController?.navigationController?.navigationBar.isTranslucent = configuration.navigationIsTranslucent
+        
+        menuContainerView.isTranslucent = configuration.navigationIsTranslucent
+        menuContainerView.tableView.backgroundColor = configuration.menuViewBackgroundColor
+        
+        menuContainerView.cellBackgroundColor = configuration.menuViewCellBackgroundColor
+        menuContainerView.cellFont = configuration.menuViewCellFont
+        menuContainerView.cellTextColor = configuration.menuViewCellTextColor
+        menuContainerView.cellHeight = configuration.menuViewCellHeight
+        
+        titleImageView.tintColor = configuration.titleTextColor
     }
   }
   
@@ -106,7 +108,7 @@ class MenuTitleView: UIStackView {
         return nil
     }
     let resourceBundle = Bundle(url: bundleURL)
-    let image = UIImage(named: "down", in: resourceBundle, compatibleWith: nil)
+    let image = UIImage(named: "down", in: resourceBundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
     return image
   }()
   
@@ -212,7 +214,7 @@ extension MenuTitleView {
       let transform = CGAffineTransform(translationX: 0, y: 0)
       self.menuContainerView.tableView.transform = transform
       self.titleImageView.transform = CGAffineTransform(rotationAngle: .pi)
-      self.titleImageView.tintColor = .red
+        self.titleImageView.tintColor = self.configuration?.titleTextColor ?? .red
     }
     
     animator.startAnimation()
@@ -232,7 +234,7 @@ extension MenuTitleView {
       
       self.menuContainerView.tableView.transform = transform
       self.titleImageView.transform = CGAffineTransform(rotationAngle: (.pi) * 2 )
-      self.titleImageView.tintColor = .black
+        self.titleImageView.tintColor = self.configuration?.titleTextColor ?? .black
     }
     animator.addCompletion { _ in
       self.menuContainerView.removeFromSuperview()
