@@ -50,7 +50,7 @@ public struct MenuConfiguration {
 }
 
 @available(iOS 10.0, *)
-class MenuTitleView: UIStackView {
+public class MenuTitleView: UIStackView {
   
   // MARK: - Properties
   
@@ -197,7 +197,7 @@ extension MenuTitleView: MenuContainerViewDelegate {
 
 // MARK: - Other Methods
 @available(iOS 10.0, *)
-extension MenuTitleView {
+public extension MenuTitleView {
   private func show(duration: Double) {
     menuContainerView.isSelected = true
     
@@ -220,7 +220,7 @@ extension MenuTitleView {
     animator.startAnimation()
   }
   
-  private func hide(duration: Double) {
+  func hide(duration: Double) {
     menuContainerView.isSelected = false
     
     let animator = UIViewPropertyAnimator(
