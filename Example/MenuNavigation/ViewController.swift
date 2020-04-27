@@ -61,11 +61,12 @@ class ViewController: UIViewController {
     
     
     let configuration: MenuConfiguration = {
-      var configure = MenuConfiguration()
-      
-      configure.title = "Select Fruits"
-      configure.isUseSelectedMenuTitle = true
-      return configure
+        var configure = MenuConfiguration()
+        
+        configure.title = "Select Fruits"
+        configure.isUseSelectedMenuTitle = true
+        configure.titleTextColor = .green
+        return configure
     } ()
     
     navigationController?.setMenu(

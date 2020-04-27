@@ -50,7 +50,7 @@ public struct MenuConfiguration {
 }
 
 @available(iOS 10.0, *)
-class MenuTitleView: UIStackView {
+public class MenuTitleView: UIStackView {
   
   // MARK: - Properties
   
@@ -60,21 +60,23 @@ class MenuTitleView: UIStackView {
         return
       }
       
-      titleLabel.text = configuration.title
-      titleLabel.textColor = configuration.titleTextColor
-      titleLabel.font = configuration.titleFont
-      
-      childViewController?.navigationController?.navigationBar.barTintColor = configuration.navigationBarTintColor
-      childViewController?.navigationController?.navigationBar.tintColor = configuration.navigationTintColor
-      childViewController?.navigationController?.navigationBar.isTranslucent = configuration.navigationIsTranslucent
-      
-      menuContainerView.isTranslucent = configuration.navigationIsTranslucent
-      menuContainerView.tableView.backgroundColor = configuration.menuViewBackgroundColor
-      
-      menuContainerView.cellBackgroundColor = configuration.menuViewCellBackgroundColor
-      menuContainerView.cellFont = configuration.menuViewCellFont
-      menuContainerView.cellTextColor = configuration.menuViewCellTextColor
-      menuContainerView.cellHeight = configuration.menuViewCellHeight
+        titleLabel.text = configuration.title
+        titleLabel.textColor = configuration.titleTextColor
+        titleLabel.font = configuration.titleFont
+        
+        childViewController?.navigationController?.navigationBar.barTintColor = configuration.navigationBarTintColor
+        childViewController?.navigationController?.navigationBar.tintColor = configuration.navigationTintColor
+        childViewController?.navigationController?.navigationBar.isTranslucent = configuration.navigationIsTranslucent
+        
+        menuContainerView.isTranslucent = configuration.navigationIsTranslucent
+        menuContainerView.tableView.backgroundColor = configuration.menuViewBackgroundColor
+        
+        menuContainerView.cellBackgroundColor = configuration.menuViewCellBackgroundColor
+        menuContainerView.cellFont = configuration.menuViewCellFont
+        menuContainerView.cellTextColor = configuration.menuViewCellTextColor
+        menuContainerView.cellHeight = configuration.menuViewCellHeight
+        
+        titleImageView.tintColor = configuration.titleTextColor
     }
   }
   
@@ -101,8 +103,12 @@ class MenuTitleView: UIStackView {
   
   /// NavigationBar's Title Image ( Right)
   private lazy var titleImage: UIImage? = {
-    let bundle = Bundle(for: MenuTitleView.self)
-    let image = UIImage(named: "down", in: bundle, compatibleWith: nil)
+    let frameworkBundle = Bundle(for: MenuTitleView.self)
+    guard let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("MenuNavigation.bundle") else {
+        return nil
+    }
+    let resourceBundle = Bundle(url: bundleURL)
+    let image = UIImage(named: "down", in: resourceBundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
     return image
   }()
   
@@ -191,7 +197,7 @@ extension MenuTitleView: MenuContainerViewDelegate {
 
 // MARK: - Other Methods
 @available(iOS 10.0, *)
-extension MenuTitleView {
+public extension MenuTitleView {
   private func show(duration: Double) {
     menuContainerView.isSelected = true
     
@@ -208,13 +214,13 @@ extension MenuTitleView {
       let transform = CGAffineTransform(translationX: 0, y: 0)
       self.menuContainerView.tableView.transform = transform
       self.titleImageView.transform = CGAffineTransform(rotationAngle: .pi)
-      self.titleImageView.tintColor = .red
+        self.titleImageView.tintColor = self.configuration?.titleTextColor ?? .red
     }
     
     animator.startAnimation()
   }
   
-  private func hide(duration: Double) {
+  func hide(duration: Double) {
     menuContainerView.isSelected = false
     
     let animator = UIViewPropertyAnimator(
@@ -228,7 +234,7 @@ extension MenuTitleView {
       
       self.menuContainerView.tableView.transform = transform
       self.titleImageView.transform = CGAffineTransform(rotationAngle: (.pi) * 2 )
-      self.titleImageView.tintColor = .black
+        self.titleImageView.tintColor = self.configuration?.titleTextColor ?? .black
     }
     animator.addCompletion { _ in
       self.menuContainerView.removeFromSuperview()
